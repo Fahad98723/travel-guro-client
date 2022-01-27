@@ -29,7 +29,7 @@ const Explore = () => {
 
             <Dropdown.Menu>
                 <Dropdown.Item onClick={() =>setValue('All Blogs')}>All Blog </Dropdown.Item>
-                <Dropdown.Item onClick={() =>setValue('Highest Paid')} >Highest Cost</Dropdown.Item>
+                <Dropdown.Item onClick={() =>setValue('Highest Paid')} >Highest Paid</Dropdown.Item>
                 <Dropdown.Item onClick={() =>setValue('Top Rated')}>Top Rated</Dropdown.Item>
             </Dropdown.Menu>
             </Dropdown>
@@ -88,7 +88,7 @@ const Explore = () => {
                        )
                    }
                    {
-                     value === "Top Rated" &&  allBlog.map(blog => 
+                     value === "Top Rated" &&  topRated.map(blog => 
                         <Col lg='6'>
                         <Card  className="bg-dark text-white" style={{cursor : 'pointer', height:'300px'}}>
                 <Card.Img src={blog.image} style={{opacity: '0.5'}} className='cardImg h-100' alt="Card image" />
