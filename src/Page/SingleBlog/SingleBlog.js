@@ -32,6 +32,7 @@ const SingleBlog = () => {
 
 
                 <h5>Expense : ${blog?.cost}</h5>
+                <h5>Category : {blog?.category}</h5>
                 <h5>Date : 2022-01-17</h5>
                 <h5>Spent : {blog?.spentDay} Days</h5>
                 <h5>Ratings : <Rating className='text-warning'

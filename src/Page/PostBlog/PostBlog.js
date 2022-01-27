@@ -18,7 +18,7 @@ const PostBlog = () => {
 
 
 
-    const addCourseHandle = e => {
+    const handleAddBlog = e => {
         e.preventDefault();
         
         const formData = {
@@ -45,7 +45,7 @@ const PostBlog = () => {
             <Row>
                 <Col lg='6'>
 
-                    <Form onSubmit={addCourseHandle}>
+                    <Form onSubmit={handleAddBlog}>
 
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Control onChange={e => setTitle(e.target.value)} type="text" placeholder="Enter Blog Title" required />
@@ -108,7 +108,7 @@ const PostBlog = () => {
                     
                             <Form.Control onChange={e => setTraveler(e.target.value)} type="text" placeholder="Traveler  Name" required />
                         </Form.Group>
-                        <Button type='submit'>Add Blog</Button>
+                        <button className='btn btn-danger' type='submit'>Add Blog</button>
                     </Form>
                 </Col>
             </Row>

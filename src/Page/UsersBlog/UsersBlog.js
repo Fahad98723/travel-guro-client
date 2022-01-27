@@ -34,8 +34,8 @@ const UsersBlog = () => {
         <div>
         <Container>
         <div className="heading mb-5">
-                <h3>Remove Those Blogs Which Are Not Good</h3>
-                <h1>Blogs Managing</h1>
+                <h3>Approved Those Blogs Which You Want To Show On Home Page</h3>
+                <h1>Blogs Publish Managing</h1>
             </div>
             <Row className ='gy-5'>
                     {

@@ -18,14 +18,16 @@ const Navigation = () => {
         <Navbar.Toggle className='' />
              <Navbar.Collapse className="justify-content-end menu">
                  <Nav.Link as={Link} to="/home">Home</Nav.Link>
-                 <Nav.Link as={Link} to="/addExperience">Add Experience</Nav.Link>
-                 <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
+                 <Nav.Link as={Link} to="/explore">Explore</Nav.Link>
+                 
+                
                 
                 {
                     user?.email && isAdmin ?  <>
                     <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link> 
-                    </> : ''
+                    </> : <Nav.Link as={Link} to="/addExperience">Add Experience</Nav.Link>
                 }
+                 <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
             <Navbar.Text>
                 {user?.email || user?.displayName ? <h6 className='mx-3 my-3 fw-bold name '><i  className="fas fa-user-check "></i> {user?.displayName}</h6> : ''}
              </Navbar.Text>

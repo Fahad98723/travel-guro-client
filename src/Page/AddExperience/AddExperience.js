@@ -15,13 +15,13 @@ const AddExperience = () => {
     const [traveler, setTraveler] = useState('');
     const [rating, setRating] = useState(0);
     const [spentDay, setSpentDay] = useState(0);
+    const [date, setDate] = useState(0);
 
-
-    const addCourseHandle = e => {
+    const handleAddBlog = e => {
         e.preventDefault();
         
         const formData = {
-            title, category, image, cost , details, address, traveler, rating, status : 'Pending', spentDay
+            title, category, image, cost , details, address, traveler, rating, status : 'Pending', spentDay, date
         }
 
         console.log(formData);
@@ -44,7 +44,7 @@ const AddExperience = () => {
             <Row>
                 <Col lg='6'>
 
-                    <Form onSubmit={addCourseHandle}>
+                    <Form onSubmit={handleAddBlog}>
 
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Control onChange={e => setTitle(e.target.value)} type="text" placeholder="Enter Blog Title" required />
@@ -61,7 +61,11 @@ const AddExperience = () => {
                             
                             <Form.Control onChange={e => setAddress(e.target.value)} type="text" placeholder="Address  Name" required />
                         </Form.Group>
-                       
+
+                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                            
+                            <Form.Control type="date" name='date_of_birth'  onChange={e => setDate(e.target.value)} required />
+                            </Form.Group>
                         {/* <Form.Group controlId="formFile" className="mb-3">
                             <Form.Label>Upload Blog Thumbnail</Form.Label>
                             <Form.Control type="file" onChange={e => setThumb(e.target.files[0])} required />
@@ -100,11 +104,11 @@ const AddExperience = () => {
                     
                             <Form.Control onChange={e => setTraveler(e.target.value)} type="text" placeholder="Traveler  Name" required />
                         </Form.Group>
-                        <Button type='submit'>Add Blog</Button>
+                        <button className='btn btn-danger' type='submit'>Add Your Experience</button>
                     </Form>
                 </Col>
                 <Col lg='6'>
-                <img src={img} alt="" />
+                <img className='img-fluid' src={img} alt="" />
                 </Col>
             </Row>
         </Container>

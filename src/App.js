@@ -18,6 +18,8 @@ import PrivateRoute from './Page/PrivateRoute/PrivateRoute';
 import Dashboard from './Page/Dashboard/Dashboard';
 import UsersBlog from './Page/UsersBlog/UsersBlog';
 import AdminRoute from './Page/AdminRoute/AdminRoute';
+import UpdatePost from './Page/UpdatePost/UpdatePost';
+import Explore from './Page/Explore/Explore';
 
 function App() {
   return (
@@ -30,6 +32,7 @@ function App() {
           <Route  path="/register" element={<Register />} />     
           <Route  path="/postBlog" element={<PostBlog />} />     
           <Route  path="/allBlogs" element={<AllBlogs />} />     
+          <Route  path="/explore" element={<Explore />} />     
           <Route  path="/makeAdmin" element={<MakeAdmin />} />     
           <Route  path="/contact" element={<Contact />} />     
           <Route  path="/addExperience" element={<PrivateRoute><AddExperience /></PrivateRoute>} />     
@@ -45,6 +48,8 @@ function App() {
 
               </Route>    
               <Route path={`/dashboard/userBlogs`} element={<UsersBlog></UsersBlog>}>
+              </Route>    
+              <Route path={`/dashboard/edit/:id`} element={<UpdatePost></UpdatePost>}>
               </Route>    
             </Route>    
     </Routes>

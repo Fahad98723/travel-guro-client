@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './AllBlogs.css'
 const AllBlogs = () => {
     const [blogs, setBlogs] = useState([]) 
@@ -59,8 +60,10 @@ const AllBlogs = () => {
                     <button onClick= {() => handleDelete(blog._id)} className="btn btn-danger me-3">Delete</button>
 
                     {
-                        blog?.status === "Pending" ?<button className="btn btn-warning">Pending</button> :  <button className="btn btn-success">Approved</button>
+                        blog?.status === "Pending" ?<button className="btn btn-warning me-3">Pending</button> :  <button className="btn btn-success me-3">Approved</button>
                     }
+
+                    <Link to={`/dashboard/edit/${blog?._id}`} className="btn btn-primary">Edit</Link>
                     </div>
                 </Card.ImgOverlay>
                 </Card>
