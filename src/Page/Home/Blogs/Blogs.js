@@ -9,7 +9,7 @@ const Blogs = () => {
     const size = 10;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/blogs?page=${page}&&size=${size}`)
+        fetch(`https://stormy-sea-69201.herokuapp.com/blogs?page=${page}&&size=${size}`)
         .then(res => res.json())
         .then(data => {
             setAllBlogs(data.blogs)

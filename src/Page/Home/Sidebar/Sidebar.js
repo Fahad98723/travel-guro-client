@@ -5,7 +5,7 @@ import { Col, Row } from 'react-bootstrap';
 const Sidebar = () => {
     const [blog, setBlog] = useState()
     useEffect(() => {
-        fetch('http://localhost:5000/blogs')
+        fetch('https://stormy-sea-69201.herokuapp.com/blogs')
         .then(res => res.json())
         .then(data => setBlog(data.blogs))
     },[])

@@ -25,7 +25,7 @@ const AddExperience = () => {
         }
 
         console.log(formData);
-        axios.post('http://localhost:5000/blogs', formData)
+        axios.post('https://stormy-sea-69201.herokuapp.com/blogs', formData)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Blog Added');

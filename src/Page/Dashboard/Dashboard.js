@@ -33,7 +33,7 @@ const Dashboard = () => {
                                 <br />
                                 <button className="btn dashboard-btn mx-2 d-flex align-items-center text-white ">
                                 <i className="fas fa-edit me-2 fs-4"></i>
-                                    <Link className='text-white' to={`/dashboard/userBlogs`}>User Blogs</Link>
+                                    <Link className='text-white' to={`/dashboard/userBlogs`}>User Pending Blogs</Link>
                                 </button>
 
                                 <br />
