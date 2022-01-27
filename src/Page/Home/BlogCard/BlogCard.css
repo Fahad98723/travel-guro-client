@@ -1,0 +1,16 @@
+.cardImg {
+    height: 100%;
+}
+.blog-card {
+    height: 300px;
+}
+
+.blog-card:hover .overlay{
+    display: inline-block;
+}
+.blog-card:hover .cardImg{
+    opacity: 0.5;
+}
+.overlay{
+    display: none;
+}

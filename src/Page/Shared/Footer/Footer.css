@@ -1,0 +1,25 @@
+/* .footer-section{
+    background: linear-gradient(rgba(34, 65, 124, 0.7),rgba(26, 54, 105, 0.7)), url('../../../images/footer.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+} */
+.footer{
+    background: #FDD20EFF;
+    color: #00203FFF;
+    font-size: 20px;
+    font-weight: 900;
+}
+.footer-section h3 {
+    font-family: 'Griffy', cursive;
+    font-size: 25px;
+    font-weight: 900;
+    color: #00203FFF;
+    margin-bottom: 20px;
+}
+.footer-section h6 {
+    color: #00203FFF;
+    font-weight: 500;
+}
+.footer-section img{
+    height: 100px;
+}

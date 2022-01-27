@@ -1,0 +1,33 @@
+.navigation-bar{
+    color: black;
+}
+.dropdown-menu.show {
+
+    border: 1px solid black;
+}
+.dropdown-item {
+    color: rgb(43, 43, 43);
+}
+
+.menu a:hover{
+    
+    color: #00203FFF;
+}
+
+.name {
+    color: #00203FFF;
+    font-family: 'Griffy', cursive;  
+    font-size: 19px;
+}
+.logo{
+    font-family: 'Henny Penny', cursive;
+    font-weight: 900;
+    font-size: 30px;
+}
+.menu a {
+    font-size: 19px;
+    font-weight: 900;
+    color: #00203FFF;
+   /* font-family: 'Fruktur', cursive;
+   font-family: 'Griffy', cursive; */
+}
