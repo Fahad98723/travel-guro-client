@@ -33,9 +33,9 @@ const UpdatePost = () => {
             .then(res => {
                 if (res.data.matchedCount) {
                     e.target.value = '';
-                    alert('Your blog has been Publish!')
+                    alert('Your blog has been Update!')
                 } else {
-                    alert('Your blog cannot Publish due to some reason')
+                    alert('Your blog cannot Update due to some reason')
                 }
             })
             .catch(error => {

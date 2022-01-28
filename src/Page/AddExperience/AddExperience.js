@@ -28,7 +28,7 @@ const AddExperience = () => {
         axios.post('https://stormy-sea-69201.herokuapp.com/blogs', formData)
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('Blog Added');
+                    alert('Your blog has been Posted Wait For Approval!');
                     e.target.reset();      
                 }
             });

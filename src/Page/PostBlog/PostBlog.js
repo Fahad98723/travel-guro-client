@@ -29,7 +29,7 @@ const PostBlog = () => {
         axios.post('https://stormy-sea-69201.herokuapp.com/blogs', formData)
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('Course Added');
+                    alert('Your blog has been Posted!');
                     e.target.reset();
                     
                 }
