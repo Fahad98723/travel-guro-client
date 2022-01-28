@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useNavigate, useLocation} from 'react-router';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../Hooks/useAuth';
 import useFirebase from '../../../Hooks/useFirebase';
 import Footer from '../Footer/Footer';
 import Navigation from '../Navigation/Navigation';
 
 const LogIn = () => {
-    const {googleSignIn,error,loginWithEmailAndPass,setError,saveUser} = useFirebase()
+    const {googleSignIn,error,loginWithEmailAndPass,setError,saveUser} = useAuth()
     const [user, setUser] = useState({})
     const location = useLocation()
     const history = useNavigate()

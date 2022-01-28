@@ -40,7 +40,7 @@ const Banner = () => {
                             Results  Answers. Types: Best Results, Explore Now, New Sources, Best in Searc
                             </p>
                             
-                            <button className="btn btn-danger">Contact</button>
+                            <Link to='/contact' className="btn btn-danger">Contact</Link>
                             <Link to='/addExperience' className="btn ms-2 btn-danger">Add Experience</Link>
                             </Container>
                         </div>

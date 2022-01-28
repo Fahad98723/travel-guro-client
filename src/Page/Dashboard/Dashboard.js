@@ -1,10 +1,11 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Link, Outlet } from 'react-router-dom';
-import useFirebase from '../../Hooks/useFirebase';
+import useAuth from '../../Hooks/useAuth';
+
 import './Dashboard.css'
 const Dashboard = () => {
-    const {logOut, user} = useFirebase()
+    const {logOut, user} = useAuth()
     return (
         <div>
             <Container>

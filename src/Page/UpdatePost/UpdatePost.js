@@ -3,13 +3,13 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import useFirebase from '../../Hooks/useFirebase';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import useAuth from '../../Hooks/useAuth';
 
 
 const UpdatePost = () => {
     const { id } = useParams();
-    const { loading } = useFirebase();
+    const { loading } = useAuth();
     const [blog, setBlog] = useState({});
 
     const [title, setTitle] = useState(blog.title);

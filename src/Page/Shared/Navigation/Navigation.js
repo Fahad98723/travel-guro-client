@@ -1,18 +1,19 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import useFirebase from '../../../Hooks/useFirebase';
 import './Navigation.css'
 import image from '../../../Images/footer/footer (1).jpg'
+import useAuth from '../../../Hooks/useAuth';
+
 const Navigation = () => {
-    const {user , isAdmin, logOut} = useFirebase()
+    const {user , isAdmin, logOut} = useAuth()
     console.log(isAdmin);
     return (
         <div>
         <Navbar collapseOnSelect expand="lg" sticky= 'top' className='py-2 navigation bg-danger'>
         <Container>
         {
-            user.email ? <img src={user?.photoURL ? user.photoURL : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZrsHa4yTpOTalvfF-EnLhyxY59jKbMX8__sb2XJs5wW2fV_zDdEo0mJgGRTXlPbkR-Y&usqp=CAU"} className='rounded-circle me-3' height={50} width={50} alt="" /> : ''
+            user.email ? <img src={user?.photoURL ? user.photoURL : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZrsHa4yTpOTalvfF-EnLhyxY59jKbMX8__sb2XJs5wW2fV_zDdEo0mJgGRTXlPbkR-Y&usqp=CAU"} className='rounded-circle me-2' height={50} width={50} alt="" /> : ''
         }
         <Navbar.Brand className='logo text-warning' as={Link} to="/home">Travel Guro</Navbar.Brand>
         <Navbar.Toggle className='' />

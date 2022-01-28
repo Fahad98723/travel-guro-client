@@ -83,7 +83,7 @@ const  useFirebase =  () => {
     useEffect( () => {
         fetch(`https://stormy-sea-69201.herokuapp.com/users/${user?.email}`)
         .then(res => res.json())
-        .then(data =>  setIsAdmin(data.admin))
+        .then(data =>  setIsAdmin(data?.admin))
     },[user?.email])
 
     return {googleSignIn,user,error, isLoading,signupWithEmailAndPass,loginWithEmailAndPass,logOut,setIsLoading,setError,setUser,saveUser,  isAdmin}

@@ -20,11 +20,13 @@ import UsersBlog from './Page/UsersBlog/UsersBlog';
 import AdminRoute from './Page/AdminRoute/AdminRoute';
 import UpdatePost from './Page/UpdatePost/UpdatePost';
 import Explore from './Page/Explore/Explore';
+import AuthProvider from './Context/AuthProvider';
 
 function App() {
   return (
     <div className="body">
-       <BrowserRouter>
+    <AuthProvider>
+    <BrowserRouter>
     <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
@@ -54,6 +56,7 @@ function App() {
             </Route>    
     </Routes>
   </BrowserRouter>
+  </AuthProvider>
     </div>
   );
 }

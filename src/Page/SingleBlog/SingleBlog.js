@@ -7,10 +7,10 @@ import Footer from '../Shared/Footer/Footer';
 import Navigation from '../Shared/Navigation/Navigation';
 import Rating from 'react-rating';
 import axios from 'axios';
-import useFirebase from '../../Hooks/useFirebase';
+import useAuth from '../../Hooks/useAuth';
 const SingleBlog = () => {
     const {id} = useParams()
-    const {user, isAdmin} = useFirebase()
+    const {user, isAdmin} = useAuth()
     const [blog, setBlog] = useState([])
     const [comment, setComment] = useState('')
     const [commented, setCommented] = useState(0)

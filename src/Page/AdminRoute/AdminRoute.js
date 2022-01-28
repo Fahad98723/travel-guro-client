@@ -1,10 +1,10 @@
 import React from 'react';
 import { Spinner, Stack } from 'react-bootstrap';
 import { Navigate, useLocation } from 'react-router-dom';
-import useFirebase from '../../Hooks/useFirebase';
+import useAuth from '../../Hooks/useAuth';
 
 const AdminRoute = ({children, ...rest}) => {
-    let {user,  isAdmin} = useFirebase();
+    let {user,  isAdmin} = useAuth();
     let location = useLocation();
 
     if (!isAdmin) { return <Stack >
