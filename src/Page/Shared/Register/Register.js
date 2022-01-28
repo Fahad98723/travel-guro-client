@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link,useNavigate, useLocation} from 'react-router-dom';
 import useFirebase from '../../../Hooks/useFirebase';
+import Footer from '../Footer/Footer';
 import Navigation from '../Navigation/Navigation';
 import './Register.css'
 const Register = () => {
@@ -67,6 +68,7 @@ const Register = () => {
             <h6 className=' mb-2'>Already have an account ? <Link to='/login'>Login</Link></h6>
             <i onClick = {handleGoogleLogin} className="fab fa-google fs-4"></i>
             </Container>
+            <Footer></Footer>
         </div>
     );
 };

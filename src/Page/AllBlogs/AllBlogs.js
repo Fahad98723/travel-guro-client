@@ -24,7 +24,7 @@ const AllBlogs = () => {
                 console.log(data);
                 if (data.deletedCount) {
                     alert("deleted successfully")
-                    const remaining = blogs.filter(bike => bike._id !== id)
+                    const remaining = blogs.filter(blog => blog._id !== id)
                     setBlogs(remaining)
                 }
             })

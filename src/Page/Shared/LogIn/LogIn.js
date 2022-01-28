@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import { useNavigate, useLocation} from 'react-router';
 import { Link } from 'react-router-dom';
 import useFirebase from '../../../Hooks/useFirebase';
+import Footer from '../Footer/Footer';
 import Navigation from '../Navigation/Navigation';
 
 const LogIn = () => {
@@ -82,6 +83,7 @@ const LogIn = () => {
             <h6 className=' mb-2'>New User ? <Link to='/register'>Create account</Link></h6>
             <i onClick = {handleGoogleLogin} className="fab fa-google fs-4"></i>
             </Container>
+            <Footer></Footer>
         </div>
     );
 };
