@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import Progress from '../../Progress/Progress';
 import BlogCard from '../BlogCard/BlogCard';
 
 const Blogs = () => {
@@ -25,13 +26,28 @@ const Blogs = () => {
                 <div className="heading mb-5">
                     <h1>Our Blogs</h1>
                 </div>
+
+                {
+            Object.keys(blogs).length === 0 ? 
             <Row className='gy-4'>
                 {
-                    blogs.map( blog => <Col lg='6'>
-                    <BlogCard blog={blog}></BlogCard>
-                </Col>)
-                }
-            </Row>
+                [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+              ].map((s) => <Col lg='6'>
+                <Progress></Progress>
+                </Col>)}
+                
+                </Row>
+                    :
+                    <Row className='gy-4'>
+            {
+                blogs.map( blog => <Col lg='6'>
+                <BlogCard blog={blog}></BlogCard>
+            </Col>)
+            }
+                        </Row>
+            }
+                
             <div className="pagination mt-3">
                 
                         {

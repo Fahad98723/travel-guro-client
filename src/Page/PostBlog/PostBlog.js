@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import swal from 'sweetalert';
+import useAuth from '../../Hooks/useAuth';
 
 const PostBlog = () => {
 
@@ -17,13 +18,14 @@ const PostBlog = () => {
     const [spentDay, setSpentDay] = useState(0);
     const [date, setDate] = useState(0);
 
+    const {user} = useAuth()
 
 
     const handleAddBlog = e => {
         e.preventDefault();
         
         const formData = {
-            title, category, image, cost , details, address, traveler, rating, status : 'Approved', spentDay , date, likes:0, likers : []
+            title, category, image, cost , details, address, traveler, rating, status : 'Approved', spentDay , date, likes:0, likers : [], bloggerImage: user.photoURL
         }
 
         console.log(formData);

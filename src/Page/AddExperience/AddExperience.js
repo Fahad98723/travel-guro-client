@@ -5,6 +5,7 @@ import Footer from '../Shared/Footer/Footer';
 import Navigation from '../Shared/Navigation/Navigation';
 import img  from '../../Images/pngwing.com.png'
 import swal from 'sweetalert';
+import useAuth from '../../Hooks/useAuth';
 
 const AddExperience = () => {
     const [title, setTitle] = useState('');
@@ -18,13 +19,18 @@ const AddExperience = () => {
     const [rating, setRating] = useState(0);
     const [spentDay, setSpentDay] = useState(0);
     const [date, setDate] = useState(0);
+    const {user} = useAuth()
+    const time = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+
+    const current = new Date();
+    const uploadDate = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
 
     const handleAddBlog = e => {
         e.preventDefault();
         
         const formData = {
-            title, category, image, cost , details, address, traveler, rating, status : 'Pending', spentDay, date,
-            likes : 0, likers: []
+            title, category, image, cost , details, address, traveler, rating, status : 'Pending', spentDay, date,likes : 0, likers: [], bloggerImage: user.photoURL,uploadTime : time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }), 
+            uploadDate : uploadDate
         }
 
         console.log(formData);
