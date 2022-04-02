@@ -236,13 +236,13 @@ console.log(rendering);
                       />
                     </div>
                     <div>
-                      <h6 className="fw-bold" style={{ fontSize: "14px",  marginBottom:'5px' }}>
+                      <p className="fw-bold" style={{ fontSize: "14px",  marginBottom:'0px' }}>
                         {b.commenter}
-                      </h6>
-                      <p style={{ fontSize: "14px", marginBottom:'0px' }}>{b.comment} {b.email === user?.email || isAdmin ? (
+                      </p>
+                      <p style={{ fontSize: "13px", marginBottom:'0px', marginTop:'0px' }}>{b.comment} {b.email === user?.email || isAdmin ? (
                         <>
                             <IconButton
-                            size="large"
+                            size="small"
                             id="fade-button"
                             aria-controls={open ? 'fade-menu' : undefined}
                             aria-haspopup="true"
@@ -264,7 +264,10 @@ console.log(rendering);
                         >
 
                             <MenuItem onClick={() => deleteComment(commentId)}>Delete <i className="fas fa-trash text-danger ms-3"></i></MenuItem>
-                            <MenuItem onClick={() => setEdit(true)}>Edit <i class="fas fa-edit text-success ms-3"></i></MenuItem>
+                            <MenuItem onClick={() => {
+                              setEdit(true)
+                              handleClose()
+                              }}>Edit <i class="fas fa-edit text-success ms-3"></i></MenuItem>
                             <divider />
                             {/* <MenuItem onClick={() => deleteFromHistory(like._id)}>Remove From Liked Videos</MenuItem> */}
 
