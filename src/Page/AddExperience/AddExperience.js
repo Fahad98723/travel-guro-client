@@ -23,7 +23,8 @@ const AddExperience = () => {
         e.preventDefault();
         
         const formData = {
-            title, category, image, cost , details, address, traveler, rating, status : 'Pending', spentDay, date
+            title, category, image, cost , details, address, traveler, rating, status : 'Pending', spentDay, date,
+            likes : 0, likers: []
         }
 
         console.log(formData);
