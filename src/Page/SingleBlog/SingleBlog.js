@@ -60,7 +60,7 @@ const SingleBlog = () => {
       email: user?.email,
     };
     axios
-      .put(`http://localhost:5000/blog/comments/${commentId}`, data)
+      .put(`https://stormy-sea-69201.herokuapp.com/blog/comments/${commentId}`, data)
       .then((res) => {
         if (res.data.matchedCount) {
           setShowA(false);
@@ -146,14 +146,14 @@ const SingleBlog = () => {
   //         likes : likeCount,
   //         likers : [liker, ...blog?.likers]
   //       }
-  //       axios.put(`http://localhost:5000/blog/likes/${id}`, likes)
+  //       axios.put(`https://stormy-sea-69201.herokuapp.com/blog/likes/${id}`, likes)
   //     }
   //     else{
   //       const likes = {
   //         likes : likeCount,
   //         likers : [...liker]
   //       }
-  //       axios.put(`http://localhost:5000/blog/likes/${id}`, likes)
+  //       axios.put(`https://stormy-sea-69201.herokuapp.com/blog/likes/${id}`, likes)
   //     }
   //   }
   // },[likeCount])
@@ -164,7 +164,7 @@ const SingleBlog = () => {
         setBlog(data)
         setCount(data.likes)
       });
-  }, [id, user?.email, rendering]);
+  }, [id, user?.email, rendering, blog.likers]);
   
 console.log(rendering);
   useEffect(() => {
@@ -217,7 +217,7 @@ console.log(rendering);
             </div>
             <div className="p-3 mt-5 shadow">
               {blogComments.slice(0, 5)?.map((b) => (
-                <div className="comments my-2 w-50">
+                <div className="comments my-2 w-100">
                   <div className="d-flex align-items-center text-dark">
                     <div>
                       <img
@@ -236,7 +236,7 @@ console.log(rendering);
                       />
                     </div>
                     <div>
-                      <h6 className="fw-bold" style={{ fontSize: "14px",  marginBottom:'0px' }}>
+                      <h6 className="fw-bold" style={{ fontSize: "14px",  marginBottom:'5px' }}>
                         {b.commenter}
                       </h6>
                       <p style={{ fontSize: "14px", marginBottom:'0px' }}>{b.comment} {b.email === user?.email || isAdmin ? (
