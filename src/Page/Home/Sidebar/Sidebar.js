@@ -11,7 +11,6 @@ const Sidebar = () => {
         .then(res => res.json())
         .then(data => setBlog(data.blogs))
     },[])
-
     const navigate = useNavigate()
     const handleSingleBlog = (id) => {
         navigate(`/singleBlog/${id}`)

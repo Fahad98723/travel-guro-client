@@ -4,6 +4,8 @@ import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import Footer from '../Shared/Footer/Footer';
 import Navigation from '../Shared/Navigation/Navigation';
 import img  from '../../Images/pngwing.com.png'
+import swal from 'sweetalert';
+
 const AddExperience = () => {
     const [title, setTitle] = useState('');
     const [category, setCategory] = useState('');
@@ -28,7 +30,11 @@ const AddExperience = () => {
         axios.post('https://stormy-sea-69201.herokuapp.com/blogs', formData)
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('Your blog has been Posted Wait For Approval!');
+                    swal({
+                        title: "Good job!",
+                        text: "Your blog has been Posted Wait For Approval!",
+                        icon: "success",
+                      });
                     e.target.reset();      
                 }
             });

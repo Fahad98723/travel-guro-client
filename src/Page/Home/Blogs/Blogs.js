@@ -12,7 +12,7 @@ const Blogs = () => {
         fetch(`https://stormy-sea-69201.herokuapp.com/blogs?page=${page}&&size=${size}`)
         .then(res => res.json())
         .then(data => {
-            setAllBlogs(data.blogs)
+            setAllBlogs(data?.blogs)
             const count = data.count
             const pageNumber = Math.ceil(count / size);
             setPageCount(pageNumber);

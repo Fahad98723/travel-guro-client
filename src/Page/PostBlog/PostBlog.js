@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import swal from 'sweetalert';
 
 const PostBlog = () => {
 
@@ -29,7 +30,11 @@ const PostBlog = () => {
         axios.post('https://stormy-sea-69201.herokuapp.com/blogs', formData)
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('Your blog has been Posted!');
+                    swal({
+                        title: "Good job!",
+                        text: "Your blog has been Posted!",
+                        icon: "success",
+                      });
                     e.target.reset();
                     
                 }

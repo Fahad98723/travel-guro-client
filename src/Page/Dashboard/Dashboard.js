@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Link, Outlet } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
-
+import Footer from '../Shared/Footer/Footer'
 import './Dashboard.css'
 const Dashboard = () => {
     const {logOut, user} = useAuth()
@@ -62,6 +62,7 @@ const Dashboard = () => {
                     </Col>
                 </Row>
             </Container>
+            <Footer></Footer>
         </div>
     );
 };

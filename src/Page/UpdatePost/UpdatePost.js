@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import useAuth from '../../Hooks/useAuth';
-
+import swal from 'sweetalert';
 
 const UpdatePost = () => {
     const { id } = useParams();
@@ -31,9 +31,13 @@ const UpdatePost = () => {
         const blog = { title, cost, details, date, category, rating, address, spentDay, traveler, image };
         axios.put(`https://stormy-sea-69201.herokuapp.com/blogs/update/${id}`, blog)
             .then(res => {
-                if (res.data.matchedCount) {
-                    e.target.value = '';
-                    alert('Your blog has been Update!')
+                if (res.data.matchedCount) {                 
+                    swal({
+                        title: "Good job!",
+                        text: "Your blog has been Update!",
+                        icon: "success",
+                      });
+                      e.target.value = '';
                 } else {
                     alert('Your blog cannot Update due to some reason')
                 }
