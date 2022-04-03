@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import Rating from 'react-rating';
 import { useNavigate } from 'react-router-dom';
+import SidebarProgress from './SidebarProgress';
 
 
 const Sidebar = () => {
-    const [blog, setBlog] = useState()
+    const [blog, setBlog] = useState([])
     useEffect(() => {
         fetch('https://stormy-sea-69201.herokuapp.com/blogs')
         .then(res => res.json())
@@ -18,29 +19,41 @@ const Sidebar = () => {
     console.log(blog);
     const topRated = blog?.filter(b => parseFloat(b.rating) >= 5)
     return (
-        <><div style={{background:'#00203FFF'}}>
-            
+        <>
         {
-            topRated?.slice(0,10).map(top => <div style={{cursor : 'pointer'}} onClick={() => handleSingleBlog(top._id)}  className='border'>
-            <Row className='align-items-center gx-0 p-2 text-white' >
-                <Col xs='4'>
-                    <img src={top.image} style={{borderRadius:'50%', height:'100px', width:'100px'}} className=' mx-auto'  alt="" />
-                </Col>
-                <Col xs='8'>
-                    <h6>{top.title}</h6>
-                    <p>{top.traveler}
-                    </p>
-                    <h6>Rating :  <Rating className='text-warning'
-                emptySymbol="fa fa-star-o "
-                fullSymbol="fa fa-star "
-                initialRating={top.rating}
-                readonly
-                /></h6>
-                </Col>
-            </Row>
-            </div>)
+            Object.keys(blog).length === 0 ? 
+                
+                [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+              ].map((s) =>
+                <SidebarProgress></SidebarProgress>
+                )
+                :
+                <div style={{background:'#00203FFF'}}>     
+            {
+                topRated?.slice(0,10).map(top => <div style={{cursor : 'pointer'}} onClick={() => handleSingleBlog(top._id)}  className='border'>
+                <Row className='align-items-center gx-0 p-2 text-white' >
+                    <Col xs='4'>
+                        <img src={top.image} style={{borderRadius:'50%', height:'100px', width:'100px'}} className=' mx-auto'  alt="" />
+                    </Col>
+                    <Col xs='8'>
+                        <h6>{top.title}</h6>
+                        <h6>{top.traveler}
+                        </h6>
+                        <h6>Rating :  <Rating className='text-warning'
+                    emptySymbol="fa fa-star-o "
+                    fullSymbol="fa fa-star "
+                    initialRating={top.rating}
+                    readonly
+                    /></h6>
+                    </Col>
+                </Row>
+                </div>)
+            }
+    
+        </div>
         }
-    </div>
+        
     <h3 className='mt-3'>Find Us On Social Sites</h3>
     <a target='blank' href='https://www.linkedin.com/in/kazi-fahad-221a91211/' className="social"><i style={{ color: '#007bb6' }} className=" me-2 fs-1 fab fa-linkedin"></i></a>
     <a target='blank' href='https://twitter.com/Mdravi88' className="social"><i style={{ color: '#00aced' }} className=" me-2 fs-1 fab fa-twitter-square"></i></a>

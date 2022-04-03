@@ -1,11 +1,14 @@
+import { Avatar } from '@mui/material';
+import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import { Card, Col, Container, Dropdown, Row } from 'react-bootstrap';
 import Rating from 'react-rating';
 import { useNavigate } from 'react-router-dom';
 import BlogCard from '../Home/BlogCard/BlogCard';
+import Progress from '../Progress/Progress';
 import Footer from '../Shared/Footer/Footer';
 import Navigation from '../Shared/Navigation/Navigation';
-
+import './Explore.css'
 const Explore = () => {
     const [blog, setBlog] = useState([])
     const [value, setValue] = useState('All Blogs')
@@ -57,125 +60,178 @@ const Explore = () => {
                    <Col>
                    <Row className='g-3'>
                    {
-                     value === 'Highest Price' &&  highestPrice.map(blog => 
+                     value === 'Highest Price' &&  highestPrice.sort((a, b) => b.cost - a.cost).map(blog => 
                         <Col onClick={() => handleSingleBlog(blog._id)} lg='6'>
-                       <Card  className="bg-dark text-white" style={{cursor : 'pointer', height:'300px'}}>
-                <Card.Img src={blog.image} style={{opacity: '0.5'}} className='cardImg h-100' alt="Card image" />
+                       <Card  className="bg-dark text-white" style={{cursor : 'pointer', height:'350px'}}>
+                <Card.Img src={blog.image} style={{opacity: '0.5'}} className='card-image ' alt="Card image" />
                 <Card.ImgOverlay className='d-flex align-items-center'>
                     <div className='p-2'>
                     <h3>{blog?.title}</h3>
                     <h3>Cost : ${blog?.cost}</h3>
                     
-                    <h5>Written By {blog?.traveler}</h5>
-                    <h5>Ratings :  <Rating className='text-warning'
+
+                    </div>
+                </Card.ImgOverlay>
+                <Box sx={{ display: 'flex', alignItems: 'center'  , padding:'10px 0px' }}>
+                    <Box sx={{ margin: 1 }}>
+     
+                        <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" />
+                    </Box>
+
+                    <Box sx={{marginLeft:'10px'}}>
+                    <small className='d-block'>Written By {blog.traveler}</small>
+                    <small>Ratings :  <Rating className='text-warning m-0'
                     emptySymbol="fa fa-star-o "
                     fullSymbol="fa fa-star "
                     initialRating={blog?.rating}
                     readonly
-                    /></h5>
-
-                    </div>
-                </Card.ImgOverlay>
+                    /></small>
+                    </Box>
+                </Box>
                 </Card>
                         </Col>
                        )
                    }
                    {
+                       Object.keys(blog).length === 0 ? [
+                        1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+                      ].map((s) => <Col lg='6'>
+                        <Progress></Progress>
+                        </Col>)  :
+                        <>
+                        {
                      value === "All Blogs" &&  allBlog.map(blog => 
                         <Col onClick={() => handleSingleBlog(blog._id)} lg='6'>
-                        <Card  className="bg-dark text-white" style={{cursor : 'pointer', height:'300px'}}>
-                <Card.Img src={blog.image} style={{opacity: '0.5'}} className='cardImg h-100' alt="Card image" />
+                        <Card  className="bg-dark text-white" style={{cursor : 'pointer', height:'350px'}}>
+                <Card.Img src={blog.image} style={{opacity: '0.5'}} className='card-image ' alt="Card image" />
                 <Card.ImgOverlay className='d-flex align-items-center'>
                     <div className='p-2'>
                     <h3>{blog?.title}</h3>
                     <p>
                     {blog?.details.slice(0,100)}
                     </p>
-                    <h5>Written By {blog?.traveler}</h5>
-                    <h5>Ratings :  <Rating className='text-warning'
+
+                    </div>
+                </Card.ImgOverlay>
+                <Box sx={{ display: 'flex', alignItems: 'center'  , padding:'10px 0px' }}>
+                    <Box sx={{ margin: 1 }}>
+     
+                        <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" />
+                    </Box>
+
+                    <Box sx={{marginLeft:'10px'}}>
+                    <small className='d-block'>Written By {blog.traveler}</small>
+                    <small>Ratings :  <Rating className='text-warning m-0'
                     emptySymbol="fa fa-star-o "
                     fullSymbol="fa fa-star "
                     initialRating={blog?.rating}
                     readonly
-                    /></h5>
-
-                    </div>
-                </Card.ImgOverlay>
+                    /></small>
+                    </Box>
+                </Box>
                 </Card>
                         </Col>
                        )
                    }
+                        </> 
+                   }
                    {
-                     value === "Lowest Price" &&  lowestPrice.map(blog => 
+                     value === "Lowest Price" &&  lowestPrice.sort((a, b) => b.cost - a.cost).map(blog => 
                         <Col onClick={() => handleSingleBlog(blog._id)} lg='6'>
-                        <Card  className="bg-dark text-white" style={{cursor : 'pointer', height:'300px'}}>
-                <Card.Img src={blog.image} style={{opacity: '0.5'}} className='cardImg h-100' alt="Card image" />
+                        <Card  className="bg-dark text-white" style={{cursor : 'pointer', height:'350px'}}>
+                <Card.Img src={blog.image} style={{opacity: '0.5'}} className='card-image ' alt="Card image" />
                 <Card.ImgOverlay className='d-flex align-items-center'>
                     <div className='p-2'>
                     <h3>{blog?.title}</h3>
                     <h3>Cost : ${blog?.cost}</h3>
                     
-                    <h5>Written By {blog?.traveler}</h5>
-                    <h5>Ratings :  <Rating className='text-warning'
+
+                    </div>
+                </Card.ImgOverlay>
+                <Box sx={{ display: 'flex', alignItems: 'center'  , padding:'10px 0px' }}>
+                    <Box sx={{ margin: 1 }}>
+     
+                        <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" />
+                    </Box>
+
+                    <Box sx={{marginLeft:'10px'}}>
+                    <small className='d-block'>Written By {blog.traveler}</small>
+                    <small>Ratings :  <Rating className='text-warning m-0'
                     emptySymbol="fa fa-star-o "
                     fullSymbol="fa fa-star "
                     initialRating={blog?.rating}
                     readonly
-                    /></h5>
+                    /></small>
+                    </Box>
+                </Box>
+                </Card>
+                        </Col>
+                       ).reverse()
+                   }
+                   {
+                     value === "Highest Rated" &&  topRated.sort((a, b) => b.rating - a.rating).map(blog => 
+                        <Col onClick={() => handleSingleBlog(blog._id)} lg='6'>
+                        <Card  className="bg-dark text-white" style={{cursor : 'pointer', height:'350px'}}>
+                <Card.Img src={blog.image} style={{opacity: '0.5'}} className='card-image ' alt="Card image" />
+                <Card.ImgOverlay className='d-flex align-items-center'>
+                    <div className='p-2'>
+                    <h3>{blog?.title}</h3>
+                    <h3>Cost : ${blog?.cost}</h3>
+
 
                     </div>
                 </Card.ImgOverlay>
+                <Box sx={{ display: 'flex', alignItems: 'center'  , padding:'10px 0px' }}>
+                    <Box sx={{ margin: 1 }}>
+     
+                        <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" />
+                    </Box>
+
+                    <Box sx={{marginLeft:'10px'}}>
+                    <small className='d-block'>Written By {blog.traveler}</small>
+                    <small>Ratings :  <Rating className='text-warning m-0'
+                    emptySymbol="fa fa-star-o "
+                    fullSymbol="fa fa-star "
+                    initialRating={blog?.rating}
+                    readonly
+                    /></small>
+                    </Box>
+                </Box>
                 </Card>
                         </Col>
                        )
                    }
                    {
-                     value === "Highest Rated" &&  topRated.map(blog => 
+                     value === "Lowest Rated" &&  lowestRated.sort((a, b) => b.rating - a.rating).map(blog => 
                         <Col onClick={() => handleSingleBlog(blog._id)} lg='6'>
-                        <Card  className="bg-dark text-white" style={{cursor : 'pointer', height:'300px'}}>
-                <Card.Img src={blog.image} style={{opacity: '0.5'}} className='cardImg h-100' alt="Card image" />
+                        <Card  className="bg-dark text-white" style={{cursor : 'pointer', height:'350px'}}>
+                <Card.Img src={blog.image} style={{opacity: '0.5'}} className='card-image ' alt="Card image" />
                 <Card.ImgOverlay className='d-flex align-items-center'>
                     <div className='p-2'>
                     <h3>{blog?.title}</h3>
                     <h3>Cost : ${blog?.cost}</h3>
                     
-                    <h5>Written By {blog?.traveler}</h5>
-                    <h5>Ratings :  <Rating className='text-warning'
+                    </div>
+                </Card.ImgOverlay>
+                <Box sx={{ display: 'flex', alignItems: 'center'  , padding:'10px 0px' }}>
+                    <Box sx={{ margin: 1 }}>
+     
+                        <Avatar src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" />
+                    </Box>
+
+                    <Box sx={{marginLeft:'10px'}}>
+                    <small className='d-block'>Written By {blog.traveler}</small>
+                    <small>Ratings :  <Rating className='text-warning m-0'
                     emptySymbol="fa fa-star-o "
                     fullSymbol="fa fa-star "
                     initialRating={blog?.rating}
                     readonly
-                    /></h5>
-
-                    </div>
-                </Card.ImgOverlay>
+                    /></small>
+                    </Box>
+                </Box>
                 </Card>
                         </Col>
-                       )
-                   }
-                   {
-                     value === "Lowest Rated" &&  lowestRated.map(blog => 
-                        <Col onClick={() => handleSingleBlog(blog._id)} lg='6'>
-                        <Card  className="bg-dark text-white" style={{cursor : 'pointer', height:'300px'}}>
-                <Card.Img src={blog.image} style={{opacity: '0.5'}} className='cardImg h-100' alt="Card image" />
-                <Card.ImgOverlay className='d-flex align-items-center'>
-                    <div className='p-2'>
-                    <h3>{blog?.title}</h3>
-                    <h3>Cost : ${blog?.cost}</h3>
-                    
-                    <h5>Written By {blog?.traveler}</h5>
-                    <h5>Ratings :  <Rating className='text-warning'
-                    emptySymbol="fa fa-star-o "
-                    fullSymbol="fa fa-star "
-                    initialRating={blog?.rating}
-                    readonly
-                    /></h5>
-
-                    </div>
-                </Card.ImgOverlay>
-                </Card>
-                        </Col>
-                       )
+                       ).reverse()
                    }
                    {/* <div className="pagination mt-3">
                 
