@@ -39,12 +39,12 @@ const RecentBlogs = () => {
           {/* Style will be inherited from the parent element */}
           <Typewriter
             words={['Write Blogs', 'Read Blogs', 'Gain Knowledge About Places']}
-            loop={false}
+            loop={0}
             cursor
-            cursorStyle='_'
-            typeSpeed={70}
+            cursorStyle='💬'
+            typeSpeed={50}
             deleteSpeed={50}
-            delaySpeed={1000}
+            delaySpeed={500}
           />
         </span></h3>
             
