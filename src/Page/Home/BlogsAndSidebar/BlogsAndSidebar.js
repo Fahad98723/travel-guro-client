@@ -12,8 +12,8 @@ const BlogsAndSidebar = () => {
                     <Blogs></Blogs>
                 </Col>
                 <Col lg='4' className='py-5'>
-                    <div className="heading mb-5">
-                    <h2>Top Rated</h2>
+                    <div className="heading mb-3">
+                    <h1>Top Rated</h1>
                     </div>
                     <Sidebar></Sidebar>
                 </Col>

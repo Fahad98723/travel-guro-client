@@ -1,13 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Griffy&family=Poppins&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Griffy&family=Lobster+Two&family=Poppins&family=Rubik+Microbe&family=Rubik+Puddles&family=Rubik+Wet+Paint&display=swap');
 
 .body{
     margin:0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    background-color: aliceblue;
 }
 
 .body a{
     text-decoration: none;
+}
+.heading h1{
+    /* font-family: 'Rubik Microbe', cursive; */
+    /* font-family: 'Rubik Puddles', cursive; */
+    font-family: 'Rubik Wet Paint', cursive;
+    font-size: 50px;
+}
+.heading h3{
+    /* font-family: 'Rubik Microbe', cursive; */
+    /* font-family: 'Rubik Puddles', cursive; */
+    /* font-family: 'Rubik Wet Paint', cursive; */
+    font-family: 'Lobster Two', cursive;
+    font-size: 30px;
 }

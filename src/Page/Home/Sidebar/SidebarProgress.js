@@ -5,7 +5,7 @@ import { Card, Col, Row } from 'react-bootstrap';
 const SidebarProgress = () => {
     return (
         <div>
-                <Card>
+            <Card style={{backgroundColor: 'aliceblue'}}>
             <Row className='align-items-center gx-0 p-2' >
             <Col xs='4'>
                  <Skeleton variant="circular" height={100} width={100}/>

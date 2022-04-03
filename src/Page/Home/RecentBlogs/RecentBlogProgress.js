@@ -2,12 +2,12 @@ import { Avatar, Box, Skeleton, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { Card } from 'react-bootstrap';
 
-const Progress = () => {
+const RecentBlogProgress = ({height}) => {
     return (
         <div>
             <Card style={{backgroundColor: 'aliceblue'}} className="" >
             <Stack spacing={1}>
-            <Skeleton variant="rectangular" height={350} className='cardImg'/>
+            <Skeleton variant="rectangular" height={height} className='cardImg'/>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <Box sx={{ margin: 1 }}>
                 <Skeleton variant="circular">
@@ -35,4 +35,4 @@ const Progress = () => {
     );
 };
 
-export default Progress;
+export default RecentBlogProgress;

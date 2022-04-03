@@ -23,7 +23,7 @@ const Blogs = () => {
     const blogs = allBlogs.filter(b => b.status === "Approved")
     return (
             <div className='py-5'>
-                <div className="heading mb-5">
+                <div className="heading mb-3">
                     <h1>Our Blogs</h1>
                 </div>
 
