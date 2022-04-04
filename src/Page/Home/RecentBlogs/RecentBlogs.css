@@ -1,0 +1,28 @@
+.recentBlogs {
+    display: block;
+    box-sizing: border-box;
+    /* background: url(https://images.unsplash.com/photo-1581362508717-f542c1ecf295?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80) top/cover; */
+    background-color: #00203FFF;
+    color: white;
+    clip-path: ellipse(87% 100% at 48.89% 0%);
+  }
+.recentBlogs h1{
+    color: white;
+  }
+.recentBlogs h3{
+    color: white;
+  }
+
+
+  @media only screen and (max-width:520px) {
+    .recentBlogs {
+        display: block;
+        box-sizing: border-box;
+        /* background: url(https://images.unsplash.com/photo-1581362508717-f542c1ecf295?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80) top/cover; */
+        background-color: #00203FFF;
+        color: white;
+        clip-path: ellipse(120% 100% at 48.89% 0%);
+      }
+  }
+
+/* only screen and (min-width:321px) and (max-width:768px) */

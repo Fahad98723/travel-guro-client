@@ -12,9 +12,9 @@ const Dashboard = () => {
             {/* style={{background : '#d1e8e2'}} */}
                 <Row>
                     <Col className='bg-danger py-5'  lg={3} sm={12}>
-                    <div className="heading mt-5 text-center">
-                        <h1 className='my-2 text-white'>DashBoard</h1>
-                    </div>
+                    {/* <div className="heading mt-5 text-center">
+                        <h2 className='my-2 text-white'>DashBoard</h2>
+                    </div> */}
                     
                         <ul className='dashboard-navbar'>
                         <h6 className=' my-3 fw-bold text-white border-1 '>{

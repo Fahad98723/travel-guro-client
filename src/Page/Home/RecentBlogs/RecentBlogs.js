@@ -5,7 +5,7 @@ import { Avatar, Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { Typewriter } from 'react-simple-typewriter';
 import RecentBlogProgress from './RecentBlogProgress';
-
+import './RecentBlogs.css'
 const RecentBlogs = () => {
     const [blogs, setBlogs] = useState([])
     const [blog, setBlog] = useState([])
@@ -30,8 +30,9 @@ const RecentBlogs = () => {
         navigate(`/singleBlog/${id}`)
     }
     return (
-        <div className='py-5 container'>
-        <Row>
+        <div className="recentBlogs">
+        <div  className='py-5 container '>
+        <Row style={{paddingBottom:'100px'}}>
             <Col lg='6'>
             <div className="heading mb-2">
             <h1>Recent Blogs</h1>
@@ -188,6 +189,8 @@ const RecentBlogs = () => {
             </Col>
         </Row>
         </div>
+        </div>
+        
     );
 };
 

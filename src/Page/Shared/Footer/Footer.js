@@ -56,7 +56,7 @@ const Footer = () => {
                 </Row>
             </Container>
         </div>
-        <div className="footer text-center py-2 bg-danger">
+        <div className="footer text-center py-2">
         <p>Copyright ©2022 Travel Guro. Designed Developed By Fahad Kibria</p>
     </div>
     </>
