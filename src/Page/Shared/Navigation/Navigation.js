@@ -10,7 +10,7 @@ const Navigation = () => {
     console.log(isAdmin);
     return (
         <div>
-        <Navbar collapseOnSelect expand="lg" fixed= 'top' className='py-2 navigation '>
+        <Navbar collapseOnSelect expand="lg" sticky= 'top' className='py-2 navigation '>
         <Container>
         {
             user.email ? <img src={user?.photoURL ? user.photoURL : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZrsHa4yTpOTalvfF-EnLhyxY59jKbMX8__sb2XJs5wW2fV_zDdEo0mJgGRTXlPbkR-Y&usqp=CAU"} className='rounded-circle me-2' height={50} width={50} alt="" /> : ''
