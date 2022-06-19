@@ -64,12 +64,14 @@ const LikeButton = ({blog, id, countNumber,allReadyLiked, blogComments, renderin
               <span className="me-3"> {blog?.likes} <i className="fas fa-heart text-danger"></i></span>
               <span> {blogComments.length} <i className="fas fa-comment text-success"></i></span>
               </div>
-              <div>
-              {
-                like ? <i onClick={likeMinus} className="fas fa-heart text-danger"></i>: 
-                <i onClick={likePlus} className="far fa-heart text-danger"></i>
-              }
-              </div>
+             {
+               user?.email &&  <div>
+               {
+                 like ? <i onClick={likeMinus} className="fas fa-heart text-danger"></i>: 
+                 <i onClick={likePlus} className="far fa-heart text-danger"></i>
+               }
+               </div>
+             }
         </div>
     );
 };

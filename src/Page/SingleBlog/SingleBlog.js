@@ -361,7 +361,9 @@ console.log(rendering);
                     as="textarea"
                     onChange={(e) => setComment(e.target.value)}
                     rows={3}
-                    placeholder="Leave Your Comment Here"
+                    placeholder={
+                      user?.email ? "Leave Your Comment Here" : "Login First"
+                    }
                     required
                   />
                 </Form.Group>
