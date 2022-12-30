@@ -44,14 +44,14 @@ const LikeButton = ({blog, id, countNumber,allReadyLiked, blogComments, renderin
               likes : likeCount,
               likers : [liker, ...blog?.likers]
             }
-            axios.put(`https://stormy-sea-69201.herokuapp.com/blog/likes/${id}`, likes)
+            axios.put(`https://travel-guro-server.onrender.com/blog/likes/${id}`, likes)
           }
           else{
             const likes = {
               likes : likeCount,
               likers : [...liker]
             }
-            axios.put(`https://stormy-sea-69201.herokuapp.com/blog/likes/${id}`, likes)
+            axios.put(`https://travel-guro-server.onrender.com/blog/likes/${id}`, likes)
           }
           setRendering(rendering + 1)
         }

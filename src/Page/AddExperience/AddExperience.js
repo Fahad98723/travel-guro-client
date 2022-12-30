@@ -34,7 +34,7 @@ const AddExperience = () => {
         }
 
         console.log(formData);
-        axios.post('https://stormy-sea-69201.herokuapp.com/blogs', formData)
+        axios.post('https://travel-guro-server.onrender.com/blogs', formData)
             .then(res => {
                 if (res.data.insertedId) {
                     swal({

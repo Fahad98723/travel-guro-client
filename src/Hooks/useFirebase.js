@@ -70,7 +70,7 @@ const  useFirebase =  () => {
     //saving user data
     const saveUser = (email, name, method) => {
         const user =  {email, name}
-        fetch('https://stormy-sea-69201.herokuapp.com/users', {
+        fetch('https://travel-guro-server.onrender.com/users', {
             method : method,
             headers : {
                 'content-type' : 'application/json'
@@ -81,7 +81,7 @@ const  useFirebase =  () => {
 
     
     useEffect( () => {
-        fetch(`https://stormy-sea-69201.herokuapp.com/users/${user?.email}`)
+        fetch(`https://travel-guro-server.onrender.com/users/${user?.email}`)
         .then(res => res.json())
         .then(data =>  setIsAdmin(data?.admin))
     },[user?.email])

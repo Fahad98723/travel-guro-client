@@ -8,7 +8,7 @@ import SidebarProgress from './SidebarProgress';
 const Sidebar = () => {
     const [blog, setBlog] = useState([])
     useEffect(() => {
-        fetch('https://stormy-sea-69201.herokuapp.com/blogs')
+        fetch('https://travel-guro-server.onrender.com/blogs')
         .then(res => res.json())
         .then(data => setBlog(data.blogs))
     },[])

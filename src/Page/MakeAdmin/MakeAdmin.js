@@ -11,7 +11,7 @@ const MakeAdmin = () => {
     //making user a admin
     const handleSubmit = e => {
         const user = {email}
-        axios.put('https://stormy-sea-69201.herokuapp.com/users/admin', user)
+        axios.put('https://travel-guro-server.onrender.com/users/admin', user)
         .then(res => {  
             if (res.data.modifiedCount) {         
                 setAdminAdded(true)

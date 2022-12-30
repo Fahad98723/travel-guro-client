@@ -29,7 +29,7 @@ const UpdatePost = () => {
     const handleAddBlog = (e) => {
         e.preventDefault();
         const blog = { title, cost, details, date, category, rating, address, spentDay, traveler, image };
-        axios.put(`https://stormy-sea-69201.herokuapp.com/blogs/update/${id}`, blog)
+        axios.put(`https://travel-guro-server.onrender.com/blogs/update/${id}`, blog)
             .then(res => {
                 if (res.data.matchedCount) {                 
                     swal({
@@ -50,7 +50,7 @@ const UpdatePost = () => {
 
     }
     useEffect(() => {
-        axios.get(`https://stormy-sea-69201.herokuapp.com/blogs/${id}`)
+        axios.get(`https://travel-guro-server.onrender.com/blogs/${id}`)
             .then(res => setBlog(res.data))
     }, [])
     if (loading) {

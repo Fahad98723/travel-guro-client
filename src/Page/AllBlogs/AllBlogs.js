@@ -8,7 +8,7 @@ const AllBlogs = () => {
 
     //all bikes collect 
     useEffect(() => {
-        fetch('https://stormy-sea-69201.herokuapp.com/blogs')
+        fetch('https://travel-guro-server.onrender.com/blogs')
         .then(res => res.json())
         .then(data => setBlogs(data.blogs))
     },[])
@@ -16,7 +16,7 @@ const AllBlogs = () => {
     const handleDelete = id => {
         const confirm = window.confirm('Are you sure you want to delete the product')
             if (confirm) {
-                fetch(`https://stormy-sea-69201.herokuapp.com/blogs/${id}`, {
+                fetch(`https://travel-guro-server.onrender.com/blogs/${id}`, {
                 method : "DELETE"
             })
             .then(res => res.json())
@@ -34,7 +34,7 @@ const AllBlogs = () => {
         const data = blogs.find(blog => blog._id === id)
         const dataUpdate = {...data}
         dataUpdate.status = 'Approved'
-        axios.put(`https://stormy-sea-69201.herokuapp.com/blogs/${id}`,dataUpdate )
+        axios.put(`https://travel-guro-server.onrender.com/blogs/${id}`,dataUpdate )
         
     }
     return (

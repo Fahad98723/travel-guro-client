@@ -60,7 +60,7 @@ const SingleBlog = () => {
       email: user?.email,
     };
     axios
-      .put(`https://stormy-sea-69201.herokuapp.com/blog/comments/${commentId}`, data)
+      .put(`https://travel-guro-server.onrender.com/blog/comments/${commentId}`, data)
       .then((res) => {
         if (res.data.matchedCount) {
           setShowA(false);
@@ -85,7 +85,7 @@ const SingleBlog = () => {
         email: user?.email,
       };
       axios
-        .post("https://stormy-sea-69201.herokuapp.com/blog/comments", data)
+        .post("https://travel-guro-server.onrender.com/blog/comments", data)
         .then((res) => {
           if (res.data.insertedId) {
             setCommented(commented + 1);
@@ -100,7 +100,7 @@ const SingleBlog = () => {
   };
 
   useEffect(() => {
-    fetch("https://stormy-sea-69201.herokuapp.com/blog/comments")
+    fetch("https://travel-guro-server.onrender.com/blog/comments")
       .then((res) => res.json())
       .then((data) => {
         setAllComments(data);
@@ -114,7 +114,7 @@ const SingleBlog = () => {
   const deleteComment = (id) => {
    console.log(id);
     axios
-      .delete(`https://stormy-sea-69201.herokuapp.com/blog/comments/${id}`)
+      .delete(`https://travel-guro-server.onrender.com/blog/comments/${id}`)
       .then((res) => {
         if (res.data.deletedCount) {
           setDeleteCommented(deleteCommented + 1);
@@ -146,19 +146,19 @@ const SingleBlog = () => {
   //         likes : likeCount,
   //         likers : [liker, ...blog?.likers]
   //       }
-  //       axios.put(`https://stormy-sea-69201.herokuapp.com/blog/likes/${id}`, likes)
+  //       axios.put(`https://travel-guro-server.onrender.com/blog/likes/${id}`, likes)
   //     }
   //     else{
   //       const likes = {
   //         likes : likeCount,
   //         likers : [...liker]
   //       }
-  //       axios.put(`https://stormy-sea-69201.herokuapp.com/blog/likes/${id}`, likes)
+  //       axios.put(`https://travel-guro-server.onrender.com/blog/likes/${id}`, likes)
   //     }
   //   }
   // },[likeCount])
   useEffect(() => {
-    fetch(`https://stormy-sea-69201.herokuapp.com/blogs/${id}`)
+    fetch(`https://travel-guro-server.onrender.com/blogs/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setBlog(data)
